@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Converter</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<style>
+* {
+  text-align: center;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center th {
+  padding: 40px;
+}
+body {
+} 
+body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    form {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+    }
+
+    input[type="number"] {
+      width: 100px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+</style>
+<script>
+    function convertSeconds() {
+      var seconds = parseInt(document.getElementById("seconds").value);
+      var minutes = Math.floor(seconds / 60);
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+
+      var result =
+        "Minutes: " + minutes + "\n" +
+        "Hours: " + hours + "\n" +
+        "Days: " + days;
+
+      alert(result);
+    }
+
+    function convertMinutes() {
+      var minutes = parseInt(document.getElementById("minutes").value);
+      var seconds = minutes * 60;
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+
+      var result =
+        "Seconds: " + seconds + "\n" +
+        "Hours: " + hours + "\n" +
+        "Days: " + days;
+
+      alert(result);
+    }
+
+    function convertHours() {
+      var hours = parseInt(document.getElementById("hours").value);
+      var seconds = hours * 3600;
+      var minutes = hours * 60;
+      var days = Math.floor(hours / 24);
+
+      var result =
+        "Seconds: " + seconds + "\n" +
+        "Minutes: " + minutes + "\n" +
+        "Days: " + days;
+
+      alert(result);
+    }
+
+    function convertDays() {
+      var days = parseInt(document.getElementById("days").value);
+      var seconds = days * 86400;
+      var minutes = days * 1440;
+      var hours = days * 24;
+
+      var result =
+        "Seconds: " + seconds + "\n" +
+        "Minutes: " + minutes + "\n" +
+        "Hours: " + hours;
+
+      alert(result);
+    }
+  </script>
+</head>
+<body background="tim.jpg">
+  <h1>Time Converter</h1>
+
+  <h2>Seconds to Minutes, Hours, and Days</h2>
+  <form>
+    <label for="seconds">Seconds:</label>
+    <input type="number" id="seconds" required>
+    <button type="button" onclick="convertSeconds()">Convert</button>
+  </form>
+
+  <h2>Minutes to Seconds, Hours, and Days</h2>
+  <form>
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes" required>
+    <button type="button" onclick="convertMinutes()">Convert</button>
+  </form>
+
+  <h2>Hours to Seconds, Minutes, and Days</h2>
+  <form>
+    <label for="hours">Hours:</label>
+    <input type="number" id="hours" required>
+    <button type="button" onclick="convertHours()">Convert</button>
+  </form>
+
+  <h2>Days to Seconds, Minutes, and Hours</h2>
+  <form>
+    <label for="days">Days:</label>
+   <input type="number" id="days" required>
+    <button type="button" onclick="convertDays()">Convert</button>
+  </form>
+</body>
+</html>
